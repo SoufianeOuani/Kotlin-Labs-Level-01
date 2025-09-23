@@ -1,0 +1,97 @@
+//This Library is to import the most used functions/methods is others problems.
+
+package com.example.problemsolvinglevel01_kotlin
+
+fun readString(message: String): String? {
+    print(message)
+    return readLine()
+}
+
+fun readNumber(message: String):Int?
+{
+    print(message)
+    var number:Int?
+    val input = readLine()
+    number = input?.toIntOrNull()
+    return number
+}
+
+fun readPositiveNumbers(message: String): Int {
+    var number: Int?
+    do {
+        print(message)
+        val input = readLine()
+        number = input?.toIntOrNull()
+    } while (number == null || number <= 0)
+    return number
+}
+
+fun isNumberBetween(number: Int, from: Int, to: Int): Boolean {
+    return (number in from..to)
+}
+
+fun readPositiveNumberInRange(message: String, from: Int, to: Int): Int {
+
+    var number: Int = from - 1
+    while (!(isNumberBetween(number, from, to))) {
+        number = readPositiveNumbers("$message $from-$to: ")
+    }
+
+    return number
+}
+
+fun hasDriverLicense(): Boolean {
+    var driverLicense: Boolean?
+    do {
+        print("Do you have a driver license? ")
+        val input = readLine()
+        driverLicense = input?.toBooleanStrictOrNull()
+    } while (driverLicense == null)
+    return driverLicense
+}
+
+fun hasRecommendation(): Boolean {
+    var recommendation: Boolean?
+    do {
+        print("Do you have a recommendation? ")
+        val input = readLine()
+        recommendation = input?.toBooleanStrictOrNull()
+    } while (recommendation == null)
+    return recommendation
+}
+
+fun getFullName(firstName: String, lastName: String): String {
+    return "$firstName $lastName"
+}
+
+fun halfNumber(number: Int): Int {
+    return number / 2
+}
+
+fun isPass(mark: Int): Boolean {
+    return mark >= 50
+}
+
+fun sumNumbers(sumLength: Int): Int {
+    var total: Int = 0
+    var counter:Short = 0
+    var number:Int = 0
+
+    while (counter < sumLength) {
+        number = readPositiveNumberInRange("Please enter a number: ", 0 , 100)
+        total += number
+        counter++
+    }
+
+    return total
+}
+
+fun averageOfNumbers(sumLength: Int):Int
+{
+    return sumNumbers(sumLength) / sumLength
+}
+
+fun getMaxNumber(number1:Int, number2: Int):Int?
+{
+    return maxOf(number1, number2)
+}
