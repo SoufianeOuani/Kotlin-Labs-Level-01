@@ -1,0 +1,11 @@
+package com.example.problemsolvinglevel01_kotlin
+
+fun main()
+{
+    var firstName:String = readString("Please enter your first name: ")
+    var lastName:String = readString("Please enter your last name: ")
+
+    print("Your first name: ")
+    print(getFullName(firstName, lastName))
+
+}
