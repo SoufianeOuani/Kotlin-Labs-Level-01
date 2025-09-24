@@ -1,0 +1,8 @@
+package com.example.problemsolvinglevel01_kotlin
+
+fun main()
+{
+    var sumLength:Int = 0
+    sumLength = readPositiveNumberInRange("Please enter the sum length: ",0,100)
+    if (isPass(averageOfNumbers(sumLength))) print("Passed") else print("Failed")
+}
