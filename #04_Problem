@@ -1,0 +1,20 @@
+package com.example.problemsolvinglevel01_kotlin
+
+fun main()
+{
+    var age :Int? = 0
+    var driverLicense: Boolean? = false
+    var recommendation: Boolean? = false
+
+    age = readPositiveNumberInRange("Please enter an age between: ",21,45)
+    driverLicense = hasDriverLicense()
+    recommendation = hasRecommendation()
+
+    if (recommendation || (driverLicense && isNumberBetween(age, 21,45))){
+        println("Hired")
+    }
+    else
+    {
+        println("Rejected")
+    }
+}
