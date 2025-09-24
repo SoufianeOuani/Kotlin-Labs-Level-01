@@ -1,0 +1,9 @@
+package com.example.problemsolvinglevel01_kotlin
+
+fun main()
+{
+    var number = readPositiveNumbers("Please enter a number: ")
+
+    print("half of $number is: ")
+    print(halfNumber(number))
+}
