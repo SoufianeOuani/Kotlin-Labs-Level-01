@@ -1,0 +1,10 @@
+package com.example.problemsolvinglevel01_kotlin
+
+fun main()
+{
+    var sumLength:Int = 0
+    sumLength = readPositiveNumbers("Please enter the sum length: ")
+
+    println("The average is: ")
+    print(averageOfNumbers(sumLength))
+}
