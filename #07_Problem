@@ -1,0 +1,10 @@
+package com.example.problemsolvinglevel01_kotlin
+
+fun main()
+{
+
+    var mark:Int? = 0
+    mark = readPositiveNumberInRange("Please enter your mark: ",0,100)
+
+    if (isPass(mark)) print("Passed") else print("Failed")
+}
