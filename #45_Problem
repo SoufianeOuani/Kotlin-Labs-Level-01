@@ -1,0 +1,9 @@
+fun printLettersFromAToZ() {
+    for (char in 'A'..'Z') {
+        println(char)
+    }
+}
+fun main()
+{
+    printLettersFromAToZ()
+}
