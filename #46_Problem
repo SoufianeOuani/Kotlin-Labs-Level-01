@@ -1,0 +1,21 @@
+fun howMuchMoneyToPayPerMonths(loanAmount: Int, monthlyPayment: Int): Int
+{
+    var neededMoney= ceil( loanAmount.toDouble() / monthlyPayment).toInt()
+    return neededMoney
+}
+fun main()
+{
+    var loanAmount = readPositiveNumbers("Please enter the loan amount: ")
+    var monthlyPayment = readPositiveNumbers("Please enter the monthly payment: ")
+
+    while (monthlyPayment > loanAmount)
+    {
+        println("Monthly payment must be smaller or equal the loan amount!")
+        monthlyPayment = readPositiveNumbers("Please enter your monthly payment: ")
+    }
+
+    var neededMonthsToSettleLoan = howMuchMoneyToPayPerMonths(loanAmount, monthlyPayment)
+
+    println("You need $neededMonthsToSettleLoan month(s) to settle your loan")
+
+}
