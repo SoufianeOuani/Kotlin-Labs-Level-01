@@ -1,0 +1,14 @@
+fun howManyMonthsNeededToSettleLoan(loanAmount: Int, monthlyPayment: Int): Int
+{
+    var neededMonths = ceil(loanAmount.toDouble() / monthlyPayment).toInt()
+    return neededMonths
+}
+fun main()
+{
+    var loanAmount = readPositiveNumbers("Please enter the loan amount: ")
+    var neededMonths = readPositiveNumbers("Please enter the needed months: ")
+
+    var neededMoneyToSettleLoan = howManyMonthsNeededToSettleLoan(loanAmount, neededMonths)
+
+    println("You need $neededMoneyToSettleLoan DH per month to settle the loan")
+}
