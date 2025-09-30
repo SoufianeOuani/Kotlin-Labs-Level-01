@@ -1,3 +1,9 @@
 fun getMaxNumber(number1: Int, number2: Int): Int {
     return maxOf(number1, number2)
 }
+
+//and this is the optimized way to solve the problem:
+fun getMaxNumber2(vararg number: Int): Int 
+{
+    return number.maxOrNull() ?: throw NoSuchElementException("No numbers provided")
+}
