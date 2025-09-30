@@ -1,3 +1,9 @@
-fun averageOfNumbers(sumLength: Int): Int {
-    return sumNumbers(sumLength) / sumLength
+package com.example.problemsolvinglevel01_kotlin
+
+fun main()
+{
+    var number1:Int = readIntNumber("Please enter number 01: ")
+    var number2:Int = readIntNumber("Please enter number 02: ")
+
+    print("The max number is: ${getMaxNumber(number1, number2)}")
 }
