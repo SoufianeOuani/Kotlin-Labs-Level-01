@@ -1,0 +1,12 @@
+package com.example.problemsolvinglevel01_kotlin
+
+fun main() {
+    var a = readIntNumber("Please the first number: ")
+    var b = readIntNumber("Please enter the second number: ")
+
+
+
+    swapNumbers(a, b)
+
+
+}
