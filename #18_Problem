@@ -1,0 +1,6 @@
+fun main()
+{
+    var diameter = readFloatNumber("Please enter the diameter: ")
+
+    print("circle area through diameter = ${circleAreaThroughDiameter(diameter)}")
+}
