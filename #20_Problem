@@ -1,0 +1,5 @@
+fun main()
+{
+    var l = readFloatNumber("Please enter the L: ")
+    print("Circle Area Along Circumference = ${circleAreaAlongCircumference(l)}")
+}
