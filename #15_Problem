@@ -1,0 +1,7 @@
+fun main()
+{
+    var sideArea = readFloatNumber("Please enter the  side area: ")
+    var diagonal = readFloatNumber("Please enter the  diagonal: ")
+
+    print("Rectangle area through diagonal: ${rectangleAreaTroughDiagonal(diagonal, sideArea)}")
+}
