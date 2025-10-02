@@ -1,0 +1,7 @@
+fun main()
+{
+    var a = readFloatNumber("Please enter the a: ")
+    var h = readFloatNumber("Please enter the height: ")
+
+    print("Triangle area = ${triangleArea(h,a)}")
+}
