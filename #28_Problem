@@ -1,0 +1,5 @@
+fun main()
+{
+    var number = readPositiveNumbers("Please enter a number: ")
+    print("Factorial of $number = ${factorialOfN(number)}")
+}
