@@ -1,0 +1,6 @@
+fun main()
+{
+    var age = readPositiveNumberInRange("PLease enter your age: ", 18, 45)
+
+    if (isNumberBetween(age, 18, 45)) print("valid age") else print("Invalid age")
+}
