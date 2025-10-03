@@ -1,0 +1,5 @@
+fun main()
+{
+    var n = readPositiveNumbers("Please enter a number: ")
+    printNumbersFromNTo1(n)
+}
