@@ -1,0 +1,5 @@
+fun main()
+{
+    val n = readPositiveNumbers("Please enter a number: ")
+    print("sum odd numbers from 1 to n = ${sumOddNumbersFrom1ToN(n)}")
+}
