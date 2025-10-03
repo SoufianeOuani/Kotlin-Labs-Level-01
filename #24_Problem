@@ -1,0 +1,5 @@
+fun main()
+{
+    val n = readPositiveNumbers("Please enter a number: ")
+    printNumbersFrom1ToN(n)
+}
