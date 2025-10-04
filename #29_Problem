@@ -1,0 +1,5 @@
+fun main()
+{
+    var number = readPositiveNumbers("Please enter a number: ")
+    printNumberPower1and2and3(number)
+}
