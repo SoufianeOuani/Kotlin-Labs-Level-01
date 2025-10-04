@@ -1,0 +1,7 @@
+fun main()
+{
+    var number = readPositiveNumbers("Please enter the base number: ")
+    var m = readPositiveNumbers("Please enter the power number: ")
+
+    print("$number ^ $m = ${numberPowerM(number, m)}")
+}
