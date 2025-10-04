@@ -1,0 +1,6 @@
+fun main()
+{
+    var grade = readPositiveNumberInRange("Please enter your grade: ", 0, 100)
+
+    print("your grade is : ${getGrade(grade)}")
+}
