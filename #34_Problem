@@ -1,0 +1,10 @@
+fun main()
+{
+    var number1 = readPositiveNumbers("Please enter the first number: ")
+    var opType = readString("Please enter an operation type: ")
+    var number2 = readPositiveNumbers("Please enter the second number: ")
+
+    var result = simpleCalculator(number1, number2, opType)
+
+    print("$number1 $opType $number2 = $result")
+}
