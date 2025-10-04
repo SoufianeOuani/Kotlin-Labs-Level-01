@@ -1,0 +1,6 @@
+fun main()
+{
+    var totalSales = readPositiveNumbers("Please enter total sales: ")
+
+    print("Commission = ${calculateCommission(totalSales)}")
+}
