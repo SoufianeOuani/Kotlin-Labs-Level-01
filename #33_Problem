@@ -1,0 +1,22 @@
+fun main()
+{
+    var penny = readFloatNumber("Please enter total pennies: ")
+    var nickel = readFloatNumber("Please enter total nickel: ")
+    var dime = readFloatNumber("Please enter total dime: ")
+    var quarter = readFloatNumber("Please enter total quarter: ")
+    var dollar = readFloatNumber("Please enter total dollar: ")
+
+
+    var totalPennies = piggyBank(penny, nickel, dime, quarter, dollar)
+    var totalNickels = piggyBank(penny, nickel, dime, quarter, dollar) / 5
+    var totalDimes = piggyBank(penny, nickel, dime, quarter, dollar) / 10
+    var totalQuarters = piggyBank(penny, nickel, dime, quarter, dollar) / 25
+    var totalDollars = piggyBank(penny, nickel, dime, quarter, dollar) / 100
+
+    println("total pennies = $totalPennies")
+    println("total nickels = $totalNickels")
+    println("total dimes = $totalDimes")
+    println("total quarters = $totalQuarters")
+    println("total dollars = $totalDollars")
+
+}
