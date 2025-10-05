@@ -1,0 +1,5 @@
+fun main()
+{
+    var sum = sumNumbersUntil()
+    print("sum of numbers until enter (-99) = $sum")
+}
