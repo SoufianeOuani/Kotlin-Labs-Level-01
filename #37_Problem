@@ -1,0 +1,12 @@
+fun main()
+{
+    var totalBill = readFloatNumber("Please enter the total bill: ")
+    var cashPaid = readFloatNumber("Please enter the cash paid: ")
+
+    var remainder = billRemainder(totalBill, cashPaid)
+
+    println("total bill = $totalBill")
+    println("cash paid = $cashPaid")
+    println("remainder to paid back = $remainder")
+
+}
