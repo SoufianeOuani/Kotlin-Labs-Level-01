@@ -1,0 +1,9 @@
+fun main()
+{
+    var numberOfDays = readFloatNumber("Please enter total days: ")
+    var numberOfHours = readFloatNumber("Please enter total hours: ")
+    var numberOfMinutes = readFloatNumber("Please enter total minutes: ")
+    var numberOfSeconds = readFloatNumber("Please enter total seconds: ")
+
+    println("Duration in seconds = ${taskDurationToSeconds(numberOfDays, numberOfHours, numberOfMinutes, numberOfSeconds)}")
+}
