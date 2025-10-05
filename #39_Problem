@@ -1,0 +1,6 @@
+fun main()
+{
+    var numberOfHours = readFloatNumber("Please enter the number of hours: ")
+    println("Number of days in $numberOfHours = ${hoursToDays(numberOfHours)}")
+    println("Number of weeks in $numberOfHours = ${hoursToWeeks(numberOfHours)}")
+}
