@@ -1,0 +1,11 @@
+fun main()
+{
+    var billValue = readFloatNumber("Please the bill value: ")
+    var serviceFees = readFloatNumber("Please the service fees: ")
+    var salesTax = readFloatNumber("Please the sales tax: ")
+    var totalBill = addServiceFeeAndSalesTax(billValue, serviceFees, salesTax)
+
+    println("\nservice fees = $serviceFees")
+    println("sales tax = $salesTax")
+    println("total bill after adding service fees and sales tax = $totalBill")
+}
