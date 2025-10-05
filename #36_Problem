@@ -1,0 +1,13 @@
+fun main()
+{
+    var number = readPositiveNumbers("Please enter a number to check: ")
+
+    if (isPrime(number))
+    {
+        print("$number is a prime number")
+    }
+    else
+    {
+        print("$number isn't a prime number")
+    }
+}
