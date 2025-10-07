@@ -1,0 +1,7 @@
+fun main()
+{
+    var dayNumber = readPositiveNumberInRange("Please enter a day number: ", 1,7)
+    var requestedDay = getRequestedDay(dayNumber)
+
+    println("It's $requestedDay")
+}
