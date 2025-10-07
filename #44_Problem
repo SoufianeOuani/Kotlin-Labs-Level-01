@@ -1,0 +1,7 @@
+fun main() {
+
+    var monthNumber = readPositiveNumberInRange("Please enter a month number: ", 1, 12)
+    var requestedMonth = getRequestedMonth(monthNumber)
+
+    println("It's $requestedMonth")
+}
