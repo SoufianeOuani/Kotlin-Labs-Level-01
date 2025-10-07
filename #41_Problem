@@ -1,0 +1,13 @@
+fun main()
+{
+    var totalSeconds = readIntNumber("Please enter total seconds: ")
+
+    var taskDuration = secondsToTaskDuration(totalSeconds)
+
+    var numberOfDays = taskDuration[0].toInt()
+    var numberOfHours = taskDuration[1].toInt()
+    var numberOfMinutes = taskDuration[2].toInt()
+    var numberOfSeconds = taskDuration[3].toInt()
+
+    println("$numberOfDays:$numberOfHours:$numberOfMinutes:$numberOfSeconds")
+}
