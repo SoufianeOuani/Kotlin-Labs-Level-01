@@ -300,6 +300,15 @@ fun sumNumbersUntil(): Int {
     return sum
 }
 
+fun isPrime(number: Int): Boolean {
+    if (number < 2) return false
+    for (i in 2..Math.sqrt(n.toDouble()).toInt()) {
+        if (number % i == 0) return false
+    }
+    return true
+}
+
+
 fun billRemainder(totaBill: Float, cashPaid: Float): Float {
     return cashPaid - totaBill
 }
