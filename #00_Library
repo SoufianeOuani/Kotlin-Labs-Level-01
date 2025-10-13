@@ -2,17 +2,42 @@
 
 package com.example.problemsolvinglevel01_kotlin
 
-fun readString(message: String): String? {
+import kotlin.math.ceil
+import kotlin.math.pow
+import kotlin.math.sqrt
+
+fun readString(message: String): String {
     print(message)
-    return readLine()
+    return readLine().toString()
 }
 
-fun readNumber(message: String):Int?
-{
+fun readCharacter(message: String): Char {
     print(message)
-    var number:Int?
-    val input = readLine()
-    number = input?.toIntOrNull()
+    var input = readLine()
+    while (input.isNullOrEmpty()) {
+        input = readLine()
+    }
+    val myChar: Char = input.firstOrNull() ?: ' '
+    return myChar
+}
+
+fun readIntNumber(message: String): Int {
+    print(message)
+    var number = 0
+    val input = readLine()?.toIntOrNull()
+    if (input != null) {
+        number = input
+    }
+    return number
+}
+
+fun readFloatNumber(message: String): Float {
+    print(message)
+    var number = 0f
+    val input = readLine()?.toFloatOrNull()
+    if (input != null) {
+        number = input
+    }
     return number
 }
 
@@ -60,9 +85,7 @@ fun hasRecommendation(): Boolean {
     return recommendation
 }
 
-fun getFullName(firstName: String, lastName: String): String {
-    return "$firstName $lastName"
-}
+fun getFullName(firstName: String, lastName: String): String = "$firstName $lastName"
 
 fun halfNumber(number: Int): Int {
     return number / 2
@@ -73,12 +96,12 @@ fun isPass(mark: Int): Boolean {
 }
 
 fun sumNumbers(sumLength: Int): Int {
-    var total: Int = 0
-    var counter:Short = 0
-    var number:Int = 0
+    var total = 0
+    var counter: Short = 0
+    var number: Int
 
     while (counter < sumLength) {
-        number = readPositiveNumberInRange("Please enter a number: ", 0 , 100)
+        number = readPositiveNumberInRange("Please enter a number: ", 0, 100)
         total += number
         counter++
     }
@@ -86,12 +109,299 @@ fun sumNumbers(sumLength: Int): Int {
     return total
 }
 
-fun averageOfNumbers(sumLength: Int):Int
-{
+fun averageOfNumbers(sumLength: Int): Int {
     return sumNumbers(sumLength) / sumLength
 }
 
-fun getMaxNumber(number1:Int, number2: Int):Int?
-{
+fun getMaxNumber(number1: Int, number2: Int): Int {
     return maxOf(number1, number2)
+}
+
+fun getMaxNumber2(vararg number: Int): Int
+{
+    return number.maxOrNull() ?: throw NoSuchElementException("No numbers provided")
+}
+
+fun swapNumbers(a: Int, b: Int) {
+    val myArr = IntArray(2)
+    myArr[0] = a; myArr[1] = b
+
+    println("A and B values before swapping: ")
+    print("A value : ")
+    println(myArr[0])
+    print("B value : ")
+    println(myArr[1])
+
+    myArr.reverse()
+
+    println("A and B values after swapping: ")
+    print("A value : ")
+    println(myArr[0])
+    print("B value : ")
+    println(myArr[1])
+}
+
+fun rectangleArea(width: Float, length: Float): Float {
+    return width * length
+}
+
+fun rectangleAreaTroughDiagonal(diagonal: Float, sideArea: Float): Float {
+    val valueUnderSqrt = (diagonal.pow(2)) - (sideArea.pow(2))
+    require(valueUnderSqrt >= 0) { "Value under square root cannot be negative" }
+    return sideArea * sqrt(valueUnderSqrt)
+}
+
+fun triangleArea(h: Float, a: Float): Float {
+    return (a / 2) * h
+}
+
+const val pi = 3.14f
+
+fun circleArea(r: Float): Float {
+    return pi * r.pow(2)
+}
+
+fun circleAreaThroughDiameter(d: Float): Float {
+    return (pi * d.pow(2)) / 4
+}
+
+fun circleAreaInscribedInASquare(a: Float): Float {
+    return circleAreaThroughDiameter(a)
+}
+
+fun circleAreaAlongCircumference(l: Float): Float {
+    return l.pow(2) / (4 * pi)
+}
+
+fun circleAreaInscribedInIsoscelesTriangle(a: Float, b: Float): Float {
+    return (pi * b.pow(2) / 4) * ((2 * a - b) / (2 * a + b))
+}
+
+fun circleAreaDescribedAroundArbitraryTriangle(a: Float, b: Float, c: Float): Float {
+    val p = (a + b + c) / 2
+    val t = (a * b * c) / (4 * (sqrt(p * (p - a) * (p - b) * (p - c))))
+    return pi * t.pow(2)
+}
+
+fun printNumbersFrom1ToN(n: Int) {
+    for (i in 1..n) {
+        println(i)
+    }
+}
+
+fun printNumbersFromNTo1(n: Int) {
+    for (i in n downTo 1) {
+        println(i)
+    }
+}
+
+fun sumOddNumbersFrom1ToN(n: Int): Int {
+    var sum = 0
+    for (i in n downTo 1) {
+        if (i % 2 != 0) {
+            sum += i
+        }
+    }
+    return sum
+}
+
+fun sumEvenNumbersFrom1ToN(n: Int): Int {
+    var sum = 0
+    for (i in n downTo 1) {
+        if (i % 2 == 0) {
+            sum += i
+        }
+    }
+    return sum
+}
+
+fun factorialOfN(n: Int): Int {
+    var factorial = 1
+
+    for (i in 1..n) {
+        factorial *= i
+    }
+    return factorial
+}
+
+fun printNumberPower1and2and3(number: Int) {
+    var a = number * number
+    var b = number * number * number
+    var c = number * number * number * number
+
+    println("a = $a")
+    println("b = $b")
+    println("c = $c")
+}
+
+fun numberPowerM(number: Int, m: Int): Int {
+    if (m == 0)
+        return 1
+
+    var p = 1;
+    var counter: Short = 0
+
+    while (counter < m) {
+        p *= number
+        counter++
+    }
+    return p
+}
+
+fun getGrade(grade: Int): Char {
+    return when (grade) {
+        in 90..100 -> 'A'
+        in 80..89 -> 'B'
+        in 70..79 -> 'C'
+        in 60..69 -> 'D'
+        in 50..59 -> 'E'
+        else -> 'F'
+    }
+}
+
+fun calculateCommission(totalSales: Int): Float {
+    return when {
+        totalSales >= 1_000_000 -> totalSales * 0.01f
+        totalSales >= 500_000 -> totalSales * 0.02f
+        totalSales >= 100_000 -> totalSales * 0.03f
+        totalSales >= 50_000 -> totalSales * 0.05f
+        else -> 0.0f
+    }
+}
+
+fun piggyBank(pennies: Float, nickels: Float, dime: Float, quarter: Float, dollar: Float): Float {
+    var totalAmount = (pennies * 1) + (nickels * 5) + (dime * 10) + (quarter * 25) + (dollar * 100)
+    return totalAmount
+}
+
+fun simpleCalculator(number1: Int, number2: Int, opType: String): Int {
+    if (opType == "+") {
+        return number1 + number2
+    } else if (opType == "-") {
+        return number1 - number2
+    } else if (opType == "/") {
+        return number1 / number2
+    } else if (opType == "*") {
+        return number1 * number2
+    } else {
+        return 0
+    }
+}
+
+fun sumNumbersUntil(): Int {
+    var sum = 0
+    while (true) {
+        val number = readIntNumber("Please enter a number: ")
+        if (number == -99) {
+            break
+        }
+        sum += number
+    }
+    return sum
+}
+
+fun billRemainder(totaBill: Float, cashPaid: Float): Float {
+    return cashPaid - totaBill
+}
+
+fun addServiceFeeAndSalesTax(billValue: Float, serviceFees: Float, salesTax: Float): Float {
+    var totaBill = (billValue * serviceFees * salesTax).toFloat()
+    return totaBill
+}
+
+fun hoursToDays(numberOfHours: Float): Float {
+    return numberOfHours / 24f
+}
+
+fun hoursToWeeks(numberOfHours: Float): Float {
+    return hoursToDays(numberOfHours) / 7
+}
+
+fun taskDurationToSeconds(
+    numberOfDays: Float,
+    numberOfHours: Float,
+    numberOfMinutes: Float,
+    numberOfSeconds: Float,
+): Float {
+    var totalSeconds: Float = 0f
+    totalSeconds =
+        (numberOfDays * 24 * 60 * 60) + (numberOfHours * 60 * 60) + (numberOfMinutes * 60) + numberOfSeconds
+    return totalSeconds
+}
+
+fun secondsToTaskDuration(totalSeconds: Int): IntArray {
+    val secondsPerDay = 24 * 60 * 60
+    val secondsPerHour = 60 * 60
+    val secondsPerMinute = 60
+
+    var remainder = totalSeconds
+
+    val numberOfDays = remainder / secondsPerDay
+    remainder %= secondsPerDay
+
+    val numberOfHours = remainder / secondsPerHour
+    remainder %= secondsPerHour
+
+    val numberOfMinutes = remainder / secondsPerMinute
+    remainder %= secondsPerMinute
+
+    val numberOfSeconds = remainder
+
+    return intArrayOf(numberOfDays, numberOfHours, numberOfMinutes, numberOfSeconds)
+
+}
+
+fun getRequestedDay(dayNumber: Int): String {
+    return when (dayNumber) {
+        1 -> "Sunday"
+        2 -> "Monday"
+        3 -> "Tuesday"
+        4 -> "Wednesday"
+        5 -> "Thursday"
+        6 -> "Friday"
+        7 -> "Saturday"
+        else -> "Invalid day"
+    }
+}
+
+fun getRequestedMonth(monthNumber: Int): String {
+    return when (monthNumber) {
+        1 -> "January"
+        2 -> "February"
+        3 -> "March"
+        4 -> "April"
+        5 -> "May"
+        6 -> "June"
+        7 -> "July"
+        8 -> "August"
+        9 -> "September"
+        10 -> "October"
+        11 -> "November"
+        12 -> "December"
+        else -> "Invalid month"
+    }
+}
+
+fun printLettersFromAToZ() {
+    for (char in 'A'..'Z') {
+        println(char)
+    }
+}
+
+fun howMuchMoneyToPayPerMonths(loanAmount: Int, monthlyPayment: Int): Int
+{
+    var neededMoney= ceil( loanAmount.toDouble() / monthlyPayment).toInt()
+    return neededMoney
+}
+
+fun howManyMonthsNeededToSettleLoan(loanAmount: Int, monthlyPayment: Int): Int
+{
+    var neededMonths = ceil(loanAmount.toDouble() / monthlyPayment).toInt()
+    return neededMonths
+}
+
+fun atmPinChecker(atmPin:String)
+{
+    val balance = 7500
+    
 }
