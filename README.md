@@ -33,3 +33,9 @@ You can run any `.kt` file using Kotlin compiler:
 ```bash
 kotlinc FileName.kt -include-runtime -d App.jar
 java -jar App.jar
+```
+or you can paste the code in Android Studio or the used compiler.
+
+👨‍💻 Author
+Sofiane Ounani
+Digital Development Trainer 🚀
